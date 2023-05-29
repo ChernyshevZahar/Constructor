@@ -16,6 +16,9 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import UserSerializer, TokenObtainPairSerializer
 
 
+def home(request):
+    return render(request, 'home.html')
+@login_required
 def bot_list_view(request):
     bots = Bot.objects.all()
     return render(request, 'bot_list.html', {'bots': bots})
@@ -73,7 +76,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('bot_list')
+    return redirect('home')
 
 def register_view(request):
     if request.method == 'POST':

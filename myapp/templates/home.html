@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Constructor</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Выход</a>
+                </li>
+            {% else %}
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Регистрация</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Вход</a>
+                </li>
+                {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section class="main-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Контруткор ботов</h1>
+          <p class="lead">Для того чтобы начать зарегестрируйтесь</p>
+        </div>
+        <div class="col-md-6">
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>&copy; 2021 Constructor. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}
