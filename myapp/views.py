@@ -87,3 +87,10 @@ def register_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
+
+def send_message_view(request, bot_id):
+    bot = get_object_or_404(Bot, id=bot_id)
+    if request.method == 'POST':
+        message = request.POST['message']
+        bot.send_message(message)
+    return render(request, 'send_message.html', {'bot': bot})

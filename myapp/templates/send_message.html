@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <input type="text" name="message" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+    <input type="hidden" name="bot_id" value="{{ bot.bot_id }}">
+  </form>
+{% endblock %}
