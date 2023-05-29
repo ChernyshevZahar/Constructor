@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Редактировать бота</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="name">Название:</label>
+      <input type="text" name="name" value="{{ bot.name }}">
+    </div>
+    <div>
+      <label for="token">Токен:</label>
+      <input type="text" name="token" value="{{ bot.token }}">
+    </div>
+    <button type="submit">Сохранить</button>
+  </form>
+{% endblock %}

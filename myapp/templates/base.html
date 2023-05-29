@@ -1,0 +1,21 @@
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Мой проект</title>
+</head>
+<body>
+    <div class="container">
+        {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">Выход</a>
+        {% else %}
+          <a href="{% url 'login' %}">Вход</a>
+          <a href="{% url 'register' %}">Регистрация</a>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
