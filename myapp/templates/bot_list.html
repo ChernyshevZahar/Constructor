@@ -5,8 +5,7 @@
   <h2 >Список ботов</h2>
   <ul>
     {% for bot in bots %}
-      <li>{{ bot.name }} - {{ bot.token }}
-        <a href="{% url 'send_message' bot.id %}" class="btn btn-primary">Сообщение</a>
+      <li>{{ bot.name }} 
         <a href="{% url 'edit_bot' bot.id %}" class="btn btn-primary">Редактировать</a>
         <a href="{% url 'delete_bot' bot.id %}" class="btn btn-primary">Удалить</a>
       </li>

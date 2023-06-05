@@ -13,6 +13,5 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('register/', register_view, name='register'),
-    path('send_message/<int:bot_id>/', views.send_message_view, name='send_message'),
     
 ]

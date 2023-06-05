@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Bot
 from .forms import BotForm
-import telegram
 
 
 from django.shortcuts import render, redirect
@@ -29,8 +28,6 @@ def create_bot_view(request):
     if form.is_valid():
         bot = form.save(commit=False)
         bot.save()
-        bot_instance = telegram.Bot(bot.token)
-        print(bot_instance.get_me())
         return redirect('bot_list')
     return render(request, 'bot_form.html', {'form': form})
 
@@ -88,9 +85,3 @@ def register_view(request):
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
 
-def send_message_view(request, bot_id):
-    bot = get_object_or_404(Bot, id=bot_id)
-    if request.method == 'POST':
-        message = request.POST['message']
-        bot.send_message(message)
-    return render(request, 'send_message.html', {'bot': bot})

@@ -38,6 +38,9 @@ INSTALLED_APPS = [
 
     'bootstrap4',
 
+    'telegram_django_bot',
+    'django_json_widget',
+
     'rest_framework',
     'rest_framework_simplejwt',
 
