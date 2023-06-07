@@ -38,11 +38,9 @@ INSTALLED_APPS = [
 
     'bootstrap4',
 
-    'telegram_django_bot',
-    'django_json_widget',
-
     'rest_framework',
     'rest_framework_simplejwt',
+
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -158,3 +156,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 LOGIN_URL = '/login/'
+
+
+TELEGRAM_BOT_TOKEN = "6084291561:AAEJ-8knSeWNC188zjI09jBGco5pgxoT5eY"

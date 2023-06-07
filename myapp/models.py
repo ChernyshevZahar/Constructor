@@ -7,3 +7,8 @@ class Bot(models.Model):
     
     class Meta:
         db_table = 'myapp_bot'
+
+class BotTEST(models.Model):
+    name = models.CharField(max_length=100)
+    text = models.CharField(max_length=100)
+    
